@@ -62,7 +62,7 @@ public class MessageManager {
      *
      * @return the locale from the current context
      */
-    private Locale getContextLocale() {
+    public Locale getContextLocale() {
         return LocaleContextHolder.getLocale();
     }
 
