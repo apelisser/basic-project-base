@@ -1,4 +1,4 @@
-package com.apelisser.base.api.exceptionhandler;
+package com.apelisser.base.application.api.exceptionhandler;
 
 import static com.apelisser.base.core.i18n.MessageConstants.*;
 
@@ -34,9 +34,9 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 
-import com.apelisser.base.api.exceptionhandler.model.ConvertibleProblemDetail;
-import com.apelisser.base.api.exceptionhandler.model.Problem;
-import com.apelisser.base.api.exceptionhandler.model.ProblemType;
+import com.apelisser.base.application.api.exceptionhandler.model.ConvertibleProblemDetail;
+import com.apelisser.base.application.api.exceptionhandler.model.Problem;
+import com.apelisser.base.application.api.exceptionhandler.model.ProblemType;
 import com.apelisser.base.core.util.ExceptionUtil;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;

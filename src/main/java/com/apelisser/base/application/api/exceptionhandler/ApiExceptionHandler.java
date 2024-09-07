@@ -1,4 +1,4 @@
-package com.apelisser.base.api.exceptionhandler;
+package com.apelisser.base.application.api.exceptionhandler;
 
 import static com.apelisser.base.core.i18n.MessageConstants.GENERIC_USER_MESSAGE;
 
@@ -10,8 +10,8 @@ import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.apelisser.base.api.exceptionhandler.model.Problem;
-import com.apelisser.base.api.exceptionhandler.model.ProblemType;
+import com.apelisser.base.application.api.exceptionhandler.model.Problem;
+import com.apelisser.base.application.api.exceptionhandler.model.ProblemType;
 import com.apelisser.base.core.context.Context;
 import com.apelisser.base.core.i18n.MessageManager;
 

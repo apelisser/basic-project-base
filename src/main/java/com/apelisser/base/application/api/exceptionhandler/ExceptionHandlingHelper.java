@@ -1,4 +1,4 @@
-package com.apelisser.base.api.exceptionhandler;
+package com.apelisser.base.application.api.exceptionhandler;
 
 import java.time.OffsetDateTime;
 import java.util.Locale;
@@ -7,8 +7,8 @@ import org.slf4j.Logger;
 import org.springframework.context.MessageSourceResolvable;
 import org.springframework.http.HttpStatusCode;
 
-import com.apelisser.base.api.exceptionhandler.model.Problem;
-import com.apelisser.base.api.exceptionhandler.model.ProblemType;
+import com.apelisser.base.application.api.exceptionhandler.model.Problem;
+import com.apelisser.base.application.api.exceptionhandler.model.ProblemType;
 import com.apelisser.base.core.context.Context;
 import com.apelisser.base.core.context.impl.ContextProperty;
 import com.apelisser.base.core.i18n.MessageManager;

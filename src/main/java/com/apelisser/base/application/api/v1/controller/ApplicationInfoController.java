@@ -1,4 +1,4 @@
-package com.apelisser.base.api.v1.controller;
+package com.apelisser.base.application.api.v1.controller;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.apelisser.base.api.v1.controller;
+package com.apelisser.base.application.api.v1.controller;
 
 import static com.apelisser.base.core.i18n.MessageConstants.APPLICATION_TEST;
 

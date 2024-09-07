@@ -1,4 +1,4 @@
-package com.apelisser.base.api.exceptionhandler.model;
+package com.apelisser.base.application.api.exceptionhandler.model;
 
 import static com.apelisser.base.core.i18n.MessageConstants.*;
 
