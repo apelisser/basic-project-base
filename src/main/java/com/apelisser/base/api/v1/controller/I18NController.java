@@ -2,24 +2,24 @@ package com.apelisser.base.api.v1.controller;
 
 import static com.apelisser.base.core.i18n.MessageConstants.APPLICATION_TEST;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.apelisser.base.core.i18n.MessageManager;
 
-
 /**
  * This controller was created only to test i18n.
  */
 @RestController
-@RequestMapping("/i18n")
+@RequestMapping(
+    path = "/api/v1/i18n",
+    produces = MediaType.APPLICATION_JSON_VALUE)
 public class I18NController {
-
-    private static final Logger log = LoggerFactory.getLogger(I18NController.class);
 
     private final MessageManager message;
 
@@ -28,10 +28,12 @@ public class I18NController {
     }
 
     @GetMapping("/test")
-    public String test(@PathVariable String code) {
+    public Map<String, String> test() {
         String retrievedMessage = message.getMessage(APPLICATION_TEST);
-        log.info("Message: '{}'", retrievedMessage);
-        return retrievedMessage;
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", retrievedMessage);
+        return response;
     }
 
 }
