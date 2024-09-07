@@ -88,7 +88,6 @@ public abstract class FrameworkExceptionHandler extends ResponseEntityExceptionH
 
         String detailMessage;
         Set<HttpMethod> supportedMethods = ex.getSupportedHttpMethods();
-
         if (!CollectionUtils.isEmpty(supportedMethods)) {
             headers.setAllow(supportedMethods);
             detailMessage = getMessage(EX_HTTP_METHOD_NOT_SUPPORTED_DETAIL, ex.getMethod(), supportedMethods);
@@ -300,7 +299,6 @@ public abstract class FrameworkExceptionHandler extends ResponseEntityExceptionH
     @Nullable
     protected ResponseEntity<Object> handleMissingServletRequestParameter(MissingServletRequestParameterException ex,
             HttpHeaders headers, HttpStatusCode status, WebRequest request) {
-
         ProblemType problemType = ProblemType.INVALID_DATA;
         String userMessage = getMessage(EX_MISSING_REQUEST_PARAMETER_MESSAGE);
         String detailMessage = getMessage(EX_MISSING_REQUEST_PARAMETER_DETAIL, ex.getParameterName(),
@@ -319,7 +317,6 @@ public abstract class FrameworkExceptionHandler extends ResponseEntityExceptionH
     @Nullable
     protected ResponseEntity<Object> handleTypeMismatch(TypeMismatchException ex, HttpHeaders headers,
             HttpStatusCode status, WebRequest request) {
-
         if (ex instanceof MethodArgumentTypeMismatchException methodArgumentTypeMismatchException) {
             return handleMethodArgumentTypeMismatch(methodArgumentTypeMismatchException, headers, status, request);
         }
@@ -331,7 +328,6 @@ public abstract class FrameworkExceptionHandler extends ResponseEntityExceptionH
     @Nullable
     protected ResponseEntity<Object> handleServletRequestBindingException(ServletRequestBindingException ex,
             HttpHeaders headers, HttpStatusCode status, WebRequest request) {
-
         if (ex instanceof MissingRequestHeaderException missingRequestHeaderException) {
             return handleMissingRequestHeaderException(missingRequestHeaderException, headers, status, request);
         }
@@ -380,6 +376,7 @@ public abstract class FrameworkExceptionHandler extends ResponseEntityExceptionH
         if (body instanceof ConvertibleProblemDetail customProblem) {
             body = customProblem.toProblemDetail();
         }
+
         return super.handleExceptionInternal(ex, body, headers, statusCode, request);
     }
 
